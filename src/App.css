@@ -1,0 +1,68 @@
+*{
+  font-family: 'Lato',Arial,Helvetica,sans-serif;
+ 
+ 
+
+}
+
+.sectionDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  width: 90%;
+  
+}
+
+.mainWeather{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-width: 90%;
+  background-image: linear-gradient(  234deg ,rgb(43, 55, 75) 45%,rgb(2, 2, 36) );
+  color: white;
+  font-size: larger;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+ 
+  
+}
+
+.SectionOneWeather{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+ 
+}
+
+.nameOfCountry{
+  text-align: center;
+}
+
+.temperaturaFont{
+  font-weight: 100;
+  font-size: 2.5em;
+}
+
+.text{
+  margin-left: 10px;
+}
+
+.sectionTwoWeather{
+  text-align: left;
+}
+
+.weatherDays{
+  display: flex;
+  justify-content: space-around;
+  background-image: linear-gradient(  275deg ,rgb(43, 55, 75) 42%,rgb(2, 2, 36) );
+  color: white;
+  font-size: larger;
+  margin-bottom: 10%;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.titleCountry{
+  text-align: center;
+}
