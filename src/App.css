@@ -66,3 +66,18 @@
 .titleCountry{
   text-align: center;
 }
+
+.inputDiv{
+  margin: auto;
+  padding-bottom: 6rem;
+}
+
+.inputCity{
+  width: 50vw;
+  height: 10vh;
+  font-size: larger;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid rgb(76, 76, 77);
+
+}

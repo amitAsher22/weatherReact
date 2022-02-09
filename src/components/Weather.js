@@ -29,12 +29,14 @@ function Weather() {
   const [Thursday , setThursday] = useState('')
   const [weaterThursdayImg ,setWeaterThursdayImg] =useState('')
   const [temperaturaThursday , setTemperaturaThursday] = useState(0)
+  const [cityValue , setCityValue]= useState('israel')
+  
  
 
 
   useEffect(() => {
     // http://api.weatherapi.com/v1/current.json?key=e285fe92093c45409f8115404220802&q=israel&aqi=no
-    axios.get('http://api.weatherapi.com/v1/forecast.json?key=e285fe92093c45409f8115404220802&q=israel&q=SW1&days=7')
+    axios.get(`http://api.weatherapi.com/v1/forecast.json?key=e285fe92093c45409f8115404220802&q=${cityValue}&days=7`)
       .then(response => {
         setWeatherJson(response.data)
         setIcon(response.data.current.condition.icon)
@@ -59,12 +61,10 @@ function Weather() {
      getdayTuesday ()
      getdayWednesday ()
      getThursday()
-  }, [weatherJson])
+  }, [cityValue])
 
-console.log(weatherJson);
-// console.log(TuesdayTimeStamp);
+// console.log(weatherJson);
 
-// console.log(Tuesday);
 
  const getdayTuesday = ()=>{
   var timestamp = TuesdayTimeStamp;
@@ -89,6 +89,18 @@ console.log(weatherJson);
   var dayOfWeek = days[a.getDay()]
   setThursday(dayOfWeek)
  }
+
+ const showCity = (e)=>{
+   if (e.key === 'Enter'){
+     let value = e.target.value
+     value.trim()
+     value.toLowerCase()
+    setCityValue(value)
+    e.target.value = ''
+   } 
+  
+ }
+ 
 
   return (
     <div className="sectionDiv">
@@ -126,6 +138,9 @@ console.log(weatherJson);
        
         
 
+        </div>
+        <div className="inputDiv" >
+          <input onKeyDown={showCity}  className="inputCity" placeholder=" your city and press Enter"/>
         </div>
     
     </div>
