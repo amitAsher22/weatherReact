@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 //// import axios
 import axios from 'axios'
-
 /// import App.css
 import '../App.css'
 
@@ -32,8 +31,6 @@ function Weather() {
   const [cityValue , setCityValue]= useState('israel')
   
  
-
-
   useEffect(() => {
     // http://api.weatherapi.com/v1/current.json?key=e285fe92093c45409f8115404220802&q=israel&aqi=no
     axios.get(`http://api.weatherapi.com/v1/forecast.json?key=e285fe92093c45409f8115404220802&q=${cityValue}&days=7`)
@@ -63,9 +60,7 @@ function Weather() {
      getThursday()
   }, [cityValue])
 
-// console.log(weatherJson);
-
-
+/////////////// function
  const getdayTuesday = ()=>{
   var timestamp = TuesdayTimeStamp;
   var a = new Date(timestamp*1000);
@@ -73,7 +68,7 @@ function Weather() {
   var dayOfWeek = days[a.getDay()]
   setTuesday(dayOfWeek) 
  }
-
+/////////////// function
  const getdayWednesday = ()=>{
   var timestamp = WednesdayTimeStamp;
   var a = new Date(timestamp * 1000);
@@ -81,7 +76,7 @@ function Weather() {
   var dayOfWeek = days[a.getDay()]
   setWednesday(dayOfWeek)
  }
-
+/////////////// function
  const getThursday =()=>{
   var timestamp = ThursdayTimeStamp;
   var a = new Date(timestamp * 1000);
@@ -89,7 +84,7 @@ function Weather() {
   var dayOfWeek = days[a.getDay()]
   setThursday(dayOfWeek)
  }
-
+/////////////// function
  const showCity = (e)=>{
    if (e.key === 'Enter'){
      let value = e.target.value
@@ -101,7 +96,6 @@ function Weather() {
   
  }
  
-
   return (
     <div className="sectionDiv">
     <h1 className="titleCountry">{nameOfCountry}</h1>
@@ -115,7 +109,7 @@ function Weather() {
           <p>wind: <span>0.8367kmph</span></p>
           <p>precip: <span>{precipMM}mm</span></p>
           <p>pressure: <span>{pressureMB}</span></p>
-          <p>Date + time: <span>{time}</span></p>
+          <p className="dataPlusTime">Date + time: <span >{time}</span></p>
           <h2 className="temperaturaFont">{temperatura} °c</h2>
         </div>
       </div>
@@ -135,16 +129,11 @@ function Weather() {
           <img src={weaterThursdayImg} alt="thursday"/>
           <p>{temperaturaThursday} °c</p>
         </div>
-       
-        
-
         </div>
         <div className="inputDiv" >
           <input onKeyDown={showCity}  className="inputCity" placeholder=" your city and press Enter"/>
         </div>
-    
     </div>
-
   )
 }
 

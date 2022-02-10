@@ -1,7 +1,5 @@
 import React ,{useEffect} from 'react';
-
 import './App.css';
-
 /// components
 import Weather from './components/Weather';
 
